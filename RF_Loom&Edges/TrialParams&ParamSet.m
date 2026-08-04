@@ -1,0 +1,45 @@
+
+% TRIAL PARAMETERS (for customization)
+
+% Define trialParameters:
+% 1.SeqNum, 2.PatNum, 3.XPos, 4.YPos, 5.XFunc, 6.YFunc, 7.XMode, 8.YMode);
+
+TrialSet=[];
+
+TrialSet(:,1) = 1:48;
+TrialSet(:,2) = repelem(1,48);
+TrialSet(:,3) = 1:48;
+TrialSet(:,4) = ones(48,1);
+TrialSet(:,5) = ones(48,1);
+TrialSet(:,6) = repmat(2,48,1);
+TrialSet(:,7) = repmat(4,48,1);
+TrialSet(:,8) = repmat(4,48,1);
+assignin('base', 'TrialSet', TrialSet)
+%save('Y:\Giovanni\FlyNeMo\TrialSet.mat', 'TrialSet')
+%save('TrialSet.mat', 'TrialSet')
+
+n=1;
+ParamSet(n).PreExpPause     =    20; % Pause before experiment starting
+ParamSet(n).PostExpPause    =     2; % Pause after experiment ending
+ParamSet(n).RandomTrials    =     1; % If 1 the trials order will be randomized, if 0 they won't be
+ParamSet(n).TrialReps       =     2; % Number of trials repetitions
+ParamSet(n).PatMeanLum      =     7; % Background intensity level
+ParamSet(n).IdPat           = [1:25];% 25 patterns, 1:25 on SD card
+% ParamSet(n).IdFuncBoxSweep  = 1;
+% ParamSet(n).IdFuncBarSweep  = 2; % same for Motion-defined (because it has the same width)
+% ParamSet(n).IdFuncWideField = 3;
+
+%pSet(n).IdFuncFlashOFF = [14:18]; 
+%pSet(n).IdFuncFlashON  = [22:26];
+
+% ParamSet(n).IdFuncStaticBar = 4;
+% ParamSet(n).IdFuncStaticBox =     [5:12];  % each pattern has 4 xFrames for different azimuthal positions for func -1 2:4:32 for box, 33 for bars
+
+ParamSet(n).StimDur         =       2;
+ParamSet(n).PreTrialPause   =       0.5;
+ParamSet(n).PostTrialPause  =       0.5;
+ParamSet(n).BaselinePause   =     0.5; % Do not change: hardcoded into position function
+ParamSet(n).TrialPause      =       2;   % Do not change: hardcoded into position function
+assignin('base', 'ParamSet', ParamSet)
+%save('Y:\Giovanni\FlyNeMo\ParamSet.mat', 'ParamSet')
+save('ParamSet.mat', 'ParamSet')
